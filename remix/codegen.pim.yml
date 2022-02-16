@@ -1,0 +1,17 @@
+schema: https://api.crystallize.com/dounot/catalogue
+documents:
+  - app/crystallize/**/*.graphql
+generates:
+  ./app/crystallize/types.generated.ts:
+    plugins:
+      - typescript
+
+  ./:
+    preset: near-operation-file
+    presetConfig:
+      baseTypesPath: ./app/crystallize/types.generated.ts
+    plugins:
+      - typescript-operations
+      - typed-document-node
+    config:
+      preResolveTypes: false

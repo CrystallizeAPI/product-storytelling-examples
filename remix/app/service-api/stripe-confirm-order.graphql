@@ -1,0 +1,16 @@
+mutation confirmStripeOrder(
+  $checkoutModel: CheckoutModelInput!
+  $paymentIntentId: String!
+) {
+  paymentProviders {
+    stripe {
+      confirmOrder(
+        checkoutModel: $checkoutModel
+        paymentIntentId: $paymentIntentId
+      ) {
+        success
+        orderId
+      }
+    }
+  }
+}

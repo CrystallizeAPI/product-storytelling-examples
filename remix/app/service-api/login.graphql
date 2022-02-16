@@ -1,0 +1,11 @@
+mutation Login($email: String!, $redirectURLAfterLogin: String!) {
+  user {
+    sendMagicLink(
+      email: $email
+      redirectURLAfterLogin: $redirectURLAfterLogin
+    ) {
+      success
+      error
+    }
+  }
+}

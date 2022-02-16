@@ -1,0 +1,101 @@
+query Product($path: String!) {
+  product: catalogue(path: $path, language: "en") {
+    summary: component(id: "brief") {
+      ...component # RichText
+    }
+    body: component(id: "body") {
+      ...component # ParagraphCollection
+    }
+    table: component(id: "nutrition") {
+      ...component # PropertiesTable
+    }
+    ... on Product {
+      __typename
+      id
+      name
+      type
+      path
+      defaultVariant {
+        firstImage {
+          url
+          altText
+          variants {
+            url
+            key
+            width
+            height
+            size
+          }
+        }
+      }
+
+      variants {
+        id
+        name
+        sku
+        price
+        priceVariants {
+          identifier
+          name
+          price
+          currency
+        }
+        stock
+        isDefault
+        attributes {
+          attribute
+          value
+        }
+        images {
+          url
+          altText
+          key
+
+          variants {
+            url
+            key
+            width
+            height
+            size
+          }
+        }
+      }
+
+      vatType {
+        name
+        percent
+      }
+    }
+    related: component(id: "related") {
+      content {
+        __typename
+        ... on ItemRelationsContent {
+          items {
+            path
+            name
+            topics {
+              name
+            }
+            ... on Product {
+              __typename
+              defaultVariant {
+                price
+                firstImage {
+                  url
+                  altText
+                  variants {
+                    url
+                    key
+                    width
+                    height
+                    size
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

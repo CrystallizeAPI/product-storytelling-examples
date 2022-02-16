@@ -1,0 +1,66 @@
+query Frontpage($path: String!) {
+  catalogue(path: $path, language: "en") {
+    meta: component(id: "meta") {
+      # ContentChunk
+      ...component
+    }
+    grid: component(id: "grid") {
+      content {
+        ... on GridRelationsContent {
+          grids {
+            rows {
+              columns {
+                layout {
+                  rowspan
+                  colspan
+                }
+                item {
+                  name
+                  path
+                  topics {
+                    name
+                  }
+                  ... on Product {
+                    variants {
+                      images {
+                        ...image
+                      }
+                      price
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  donuts: catalogue(path: "/shop/donuts", language: "en") {
+    children {
+      id
+      topics {
+        name
+      }
+      bundle: component(id: "bundle") {
+        content {
+          ...boolean
+        }
+      }
+      ... on Product {
+        __typename
+        name
+        path
+        topics {
+          name
+        }
+        defaultVariant {
+          firstImage {
+            ...image
+          }
+          price
+        }
+      }
+    }
+  }
+}
