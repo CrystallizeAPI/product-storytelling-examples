@@ -1,5 +1,5 @@
 import { componentContent } from "../crystallize/utils/componentContent";
-import { FrontpageQuery } from "@/crystallize/queries/frontpage.generated";
+import { FrontpageQuery } from "../crystallize/queries/frontpage.generated";
 import { Image } from "@crystallize/react-image";
 import { Link } from "remix";
 
@@ -12,7 +12,7 @@ export const Products = ({ donuts }: ProductsProps) => {
 
   return (
     <div className="mt-20">
-      <p className="text-lg font-semibold mb-10">Our dounots</p>
+      <p className="text-lg font-semibold mb-10">Our do(u)nuts</p>
       <div className="flex items-start flex-wrap gap-1">
         {donuts.children.map((donut, index) =>
           !componentContent(donut.bundle.content, "BooleanContent").value ? (
