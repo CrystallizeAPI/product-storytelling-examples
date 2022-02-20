@@ -20,17 +20,12 @@ import {
 } from "../../service-api/stripe-confirm-order.generated";
 import { StripeLoader } from "../stripe-loader";
 import { PaymentProps } from "./types";
-import { Form, redirect, useSubmit } from "remix";
+import { Form, useSubmit } from "remix";
 
 
 interface FormProps extends PaymentProps {
   stripeClientSecret?: string;
   checkoutModel: CheckoutModelInput;
-}
-
-export const action = async ({request}) => {
-  const formData = await request.formData();
-  console.log(formData);
 }
 
 export const StripeForm = ({
@@ -39,7 +34,6 @@ export const StripeForm = ({
   onSuccess,
   onError = (error) => console.log(error),
 }: FormProps) => {
-  const submit = useSubmit();
   const stripe = useStripe();
   const elements = useElements();
 
@@ -128,7 +122,7 @@ export const StripeForm = ({
             },
           },
         }}
-        className="mt-8 mb-5 border-2 border-text  p-5"
+        className="mt-8 mb-5 border-2 border-text p-5"
       />
 
       <button

@@ -1,9 +1,9 @@
 import { useBasket } from "../components/basket";
 import { Link } from "remix";
+import { ItemSortField } from "~/crystallize/types.generated";
 
 export default function Cart() {
   let basket = useBasket();
-  console.log(basket);
   if (!basket.cart.length) {
     return (
       <div className="py-20">
@@ -12,8 +12,10 @@ export default function Cart() {
     );
   }
   return (
-    <div className="py-20 text-text w-auth">
-      <h1 className="text-4xl font-bold  mb-10">Your shopping cart </h1>
+    <div className="py-20 text-text w-auth mx-auto">
+      <h1 className="text-4xl font-bold  mb-10">
+        Your shopping cart ({basket.cart.length})
+      </h1>
       <div className="flex flex-col gap-5 bg-background1 p-20">
         {basket.cart.map((item, index) => (
           <div key={index} className="flex justify-between items-center">

@@ -11,13 +11,13 @@ export const RelatedProducts = ({ related }: RelatedProductProps) => {
   const getLastItem = (url) => url.substring(url.lastIndexOf("/") + 1);
 
   return (
-    <div className="flex w-full items-start  gap-5">
+    <div className="flex w-full items-start flex-wrap gap-1">
       {componentContent(related.content, "ItemRelationsContent").items.map(
         (item, index) => (
           <Link
             to={"/" + getLastItem(item.path)}
             key={index}
-            className="bg-primary px-4 py-3 rounded-xl border-2 border-grey w-4/12"
+            className="bg-primary px-4 py-3 rounded-xl border-2 border-grey md:w-80 w-full"
           >
             <div className="flex flex-col">
               <div className="flex justify-between">

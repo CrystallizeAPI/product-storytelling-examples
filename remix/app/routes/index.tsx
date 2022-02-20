@@ -42,6 +42,20 @@ export default function Index() {
   let { catalogue, donuts } = useLoaderData();
   let { grid } = catalogue;
 
+  const children = ({ cells }) => {
+    return cells.map((cell) => (
+      <div
+        style={{
+          gridColumn: `span ${cell.layout.colspan}`,
+          gridRow: `span ${cell.layout.rowspan}`,
+        }}
+        id="grid-item"
+      >
+        <GridItem cell={cell} />
+      </div>
+    ));
+  };
+
   return (
     <div className="py-20">
       <div
@@ -51,11 +65,7 @@ export default function Index() {
           zIndex: "-1",
         }}
       ></div>
-      <Grid
-        model={grid.content.grids[0]}
-        cellComponent={({ cell }) => <GridItem cell={cell} />}
-        className="gap-3"
-      />
+      <Grid model={grid.content.grids[0]} className="gap-5">{children}</Grid>
       <Products donuts={donuts} />
     </div>
   );

@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  @media (max-width: 1024px) {
+    #grid-item {
+      grid-column: span 3 !important;
+    }
+  }
+}

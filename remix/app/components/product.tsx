@@ -30,8 +30,8 @@ export const Product = ({ product }: ProductProps) => {
   };
 
   return (
-    <div className="py-20">
-      <div className="flex flex-row items-center mt-10 mb-5">
+    <div className="py-5">
+      <div className="flex lg:flex-row flex-col items-center mt-10 mb-5">
         <div className="flex flex-col text-text w-6/12">
           <h1 className="font-extrabold text-5xl mb-3">{item.name}</h1>
           <ContentTransformer
@@ -54,7 +54,7 @@ export const Product = ({ product }: ProductProps) => {
           />
         </div>
       </div>
-      <div className="flex z-10 justify-between w-5/12 mx-auto bg-white p-5 text-text rounded-xl">
+      <div className="flex z-10 justify-between lg:w-5/12 w-8/12 mx-auto bg-white p-5 text-text rounded-xl">
         <div>
           <p className="font-semibold text-sm">Total price</p>
           <p className="font-bold text-lg">${selectedVariant.price}</p>

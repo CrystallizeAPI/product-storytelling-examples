@@ -70,7 +70,7 @@ export default function App() {
 
 function Layout({ children }) {
   return (
-    <div className="remix-app w-content mx-auto p-8 sm:px-6">
+    <div className="remix-app lg:w-content w-full mx-auto p-8 sm:px-6">
       <header className="remix-app__header">
         <div className="container remix-app__header-content flex justify-between">
           <Link to="/" title="Remix" className="remix-app__header-home-link">

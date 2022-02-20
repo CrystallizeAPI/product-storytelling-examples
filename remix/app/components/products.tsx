@@ -13,13 +13,12 @@ export const Products = ({ donuts }: ProductsProps) => {
   return (
     <div className="mt-20">
       <p className="text-lg font-semibold mb-10">Our do(u)nuts</p>
-      <div className="flex items-start flex-wrap gap-1">
+      <div className="flex items-start flex-wrap lg:gap-1 gap-5">
         {donuts.children.map((donut, index) =>
           !componentContent(donut.bundle.content, "BooleanContent").value ? (
             <Link
               to={getLastItem(componentContent(donut, "Product").path)}
-              className="flex flex-col bg-primary rounded-xl h-106 p-5"
-              style={{ width: "33%" }}
+              className="flex flex-col bg-primary rounded-xl lg:h-106 p-5 lg:w-80"
               key={index}
             >
               <div>

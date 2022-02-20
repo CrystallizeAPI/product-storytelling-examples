@@ -37,10 +37,8 @@ export default function Index() {
   return (
     <div>
       <div
-        className="bg-background5 z-0 absolute left-0 right-0"
+        className="bg-background5 z-0 absolute left-0 right-0 rounded-full"
         style={{
-          borderRadius: "50%/20%",
-          height: "65%",
           bottom: "10%",
           top: "21%",
           zIndex: "-1",
