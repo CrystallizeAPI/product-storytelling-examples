@@ -42,7 +42,7 @@ export const GridItem = ({ cell }) => {
   ) : (
     <Link to={getLastItem(cell.item.path)} prefetch="intent">
       <div
-        className={`flex flex-col ${bgColor} px-5 py-7 rounded-xl lg:h-106 h-full`}
+        className={`flex flex-col bg-background1 px-5 py-7 rounded-xl lg:h-106 h-full`}
       >
         <div className="flex justify-between items-start">
           <div className="flex gap-1">
