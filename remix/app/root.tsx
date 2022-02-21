@@ -44,7 +44,7 @@ export default function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
-        <Links />
+        <Links/>
       </head>
       <body>
       <QueryClientProvider client={queryClient}>
@@ -73,10 +73,10 @@ function Layout({ children }) {
     <div className="remix-app lg:w-content w-full mx-auto p-8 sm:px-6">
       <header className="remix-app__header">
         <div className="container remix-app__header-content flex justify-between">
-          <Link to="/" title="Remix" className="remix-app__header-home-link">
+          <Link prefetch="intent" to="/" title="Remix" className="remix-app__header-home-link">
             <Logo />
           </Link>
-          <Link to="/cart" title="Your cart" className="remix-app__header-link">
+          <Link prefetch="intent" to="/cart" title="Your cart" className="remix-app__header-link">
             <BasketButton />
           </Link>
         </div>
@@ -86,7 +86,7 @@ function Layout({ children }) {
       </div>
       <footer className="remix-app__footer">
         <div className="container remix-app__footer-content mt-40">
-          <Link to="/" title="Remix" className="remix-app__header-home-link">
+          <Link prefetch="intent" to="/" title="Remix" className="remix-app__header-home-link">
             <Logo />
           </Link>
         </div>
