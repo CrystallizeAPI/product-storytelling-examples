@@ -15,6 +15,7 @@ export const RelatedProducts = ({ related }: RelatedProductProps) => {
       {componentContent(related.content, "ItemRelationsContent").items.map(
         (item, index) => (
           <Link
+            prefetch="intent"
             to={"/" + getLastItem(item.path)}
             key={index}
             className="bg-primary px-4 py-3 rounded-xl border-2 border-grey md:w-80 w-full"
@@ -38,6 +39,7 @@ export const RelatedProducts = ({ related }: RelatedProductProps) => {
 
               <Image
                 {...componentContent(item, "Product").defaultVariant.firstImage}
+                sizes="(max-width: 1024px) 100vw, 400px"
               />
               <h2 className="text-l text-center m-auto">{item.name}</h2>
             </div>

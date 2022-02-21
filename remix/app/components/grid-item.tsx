@@ -14,10 +14,11 @@ export const GridItem = ({ cell }) => {
   let bgColor = colors[Math.floor(Math.random() * colors.length)];
 
   return cell.layout.colspan === 3 ? (
-    <Link to={getLastItem(cell.item.path)}>
+    <Link to={getLastItem(cell.item.path)} prefetch="intent">
       <div className="flex relative lg:flex-row flex-col">
         <Image
           {...cell.item.variants[0]?.images[0]}
+          sizes="(max-width: 1024px) 100vw, 400px"
           className="lg:absolute lg:top-0 lg:bottom-0 lg:right-0  lg:w-8/12 overflow-hidden rounded-r-xl"
         />
         <div className="flex flex-col justify-evenly lg:w-128  px-5 bg-background1 h-80 p-5 rounded-xl w-full lg:items-start items-center">
@@ -39,7 +40,7 @@ export const GridItem = ({ cell }) => {
       </div>
     </Link>
   ) : (
-    <Link to={getLastItem(cell.item.path)}>
+    <Link to={getLastItem(cell.item.path)} prefetch="intent">
       <div
         className={`flex flex-col ${bgColor} px-5 py-7 rounded-xl lg:h-106 h-full`}
       >
@@ -56,7 +57,10 @@ export const GridItem = ({ cell }) => {
           </div>
           <p className="self-end">${cell.item.variants[0]?.price}</p>
         </div>
-        <Image {...cell.item.variants[0]?.images[0]} />
+        <Image
+          {...cell.item.variants[0]?.images[0]}
+          sizes="(max-width: 1024px) 100vw, 400px"
+        />
         <h2 className="text-3xl font-bold text-center w-40 m-auto">
           {cell.item.name}
         </h2>

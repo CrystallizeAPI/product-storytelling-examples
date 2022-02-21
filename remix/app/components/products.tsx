@@ -18,6 +18,7 @@ export const Products = ({ donuts }: ProductsProps) => {
           !componentContent(donut.bundle.content, "BooleanContent").value ? (
             <Link
               to={getLastItem(componentContent(donut, "Product").path)}
+              prefetch="intent"
               className="flex flex-col bg-primary rounded-xl lg:h-106 p-5 lg:w-80"
               key={index}
             >
@@ -35,6 +36,7 @@ export const Products = ({ donuts }: ProductsProps) => {
                 <Image
                   {...componentContent(donut, "Product").defaultVariant
                     .firstImage}
+                    sizes="(max-width: 1024px) 100vw, 400px"
                 />
                 <h2 className="text-3xl font-bold text-center m-auto w-40">
                   {componentContent(donut, "Product").name}
