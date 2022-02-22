@@ -13,6 +13,6 @@
   status = 200
 
 [[headers]]
-  for = "/*"
+  for = "*"
   [headers.values]
     "Cache-Control" = "public, max-age=0, must-revalidate"
