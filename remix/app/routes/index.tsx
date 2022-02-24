@@ -1,4 +1,10 @@
-import { useLoaderData, json, LoaderFunction, MetaFunction } from "remix";
+import {
+  useLoaderData,
+  json,
+  LoaderFunction,
+  MetaFunction,
+  HeadersFunction,
+} from "remix";
 import { catalogueClient } from "../clients";
 import {
   FrontpageDocument,
@@ -65,7 +71,9 @@ export default function Index() {
           zIndex: "-1",
         }}
       ></div>
-      <Grid model={grid.content.grids[0]} className="gap-5">{children}</Grid>
+      <Grid model={grid.content.grids[0]} className="gap-5">
+        {children}
+      </Grid>
       <Products donuts={donuts} />
     </div>
   );

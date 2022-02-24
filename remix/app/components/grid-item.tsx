@@ -2,19 +2,9 @@ import { Image } from "@crystallize/react-image";
 import { Link } from "remix";
 
 export const GridItem = ({ cell }) => {
-  const getLastItem = (url) => url.substring(url.lastIndexOf("/") + 1);
-
-  let colors = [
-    "bg-background1",
-    "bg-background2",
-    "bg-background3",
-    "bg-background4",
-    "bg-background5",
-  ];
-  let bgColor = colors[Math.floor(Math.random() * colors.length)];
 
   return cell.layout.colspan === 3 ? (
-    <Link to={getLastItem(cell.item.path)} prefetch="intent">
+    <Link to={cell.item.path} prefetch="intent">
       <div className="flex relative lg:flex-row flex-col">
         <Image
           {...cell.item.variants[0]?.images[0]}
@@ -40,7 +30,7 @@ export const GridItem = ({ cell }) => {
       </div>
     </Link>
   ) : (
-    <Link to={getLastItem(cell.item.path)} prefetch="intent">
+    <Link to={cell.item.path} prefetch="intent">
       <div
         className={`flex flex-col bg-background1 px-5 py-7 rounded-xl lg:h-106 h-full`}
       >

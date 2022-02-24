@@ -36,7 +36,7 @@ query Frontpage($path: String!) {
       }
     }
   }
-  donuts: catalogue(path: "/shop/donuts", language: "en") {
+  donuts: catalogue(path: "/shop", language: "en") {
     children {
       id
       topics {

@@ -8,7 +8,6 @@ interface RelatedProductProps {
 }
 
 export const RelatedProducts = ({ related }: RelatedProductProps) => {
-  const getLastItem = (url) => url.substring(url.lastIndexOf("/") + 1);
 
   return (
     <div className="flex w-full items-start flex-wrap gap-1">
@@ -16,7 +15,7 @@ export const RelatedProducts = ({ related }: RelatedProductProps) => {
         (item, index) => (
           <Link
             prefetch="intent"
-            to={"/" + getLastItem(item.path)}
+            to={item.path}
             key={index}
             className="bg-primary px-4 py-3 rounded-xl border-2 border-grey md:w-80 w-full"
           >

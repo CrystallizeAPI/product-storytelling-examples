@@ -893,12 +893,12 @@ select {
   border-radius: 0.125rem;
 }
 
-.rounded-full {
-  border-radius: 1000px;
-}
-
 .rounded {
   border-radius: 0.25rem;
+}
+
+.rounded-full {
+  border-radius: 1000px;
 }
 
 .rounded-r-xl {
