@@ -49,13 +49,14 @@ export default function Index() {
   let { grid } = catalogue;
 
   const children = ({ cells }) => {
-    return cells.map((cell) => (
+    return cells.map((cell, index) => (
       <div
         style={{
           gridColumn: `span ${cell.layout.colspan}`,
           gridRow: `span ${cell.layout.rowspan}`,
         }}
         id="grid-item"
+        key={'cell'+index}
       >
         <GridItem cell={cell} />
       </div>
