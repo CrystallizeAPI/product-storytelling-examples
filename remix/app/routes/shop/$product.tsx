@@ -7,6 +7,7 @@ import {
 import { normalizeDocumentNode } from "../../crystallize/utils/normalizeDocumentNode";
 import { Product } from "../../components/product";
 import { componentContent } from "../../crystallize/utils/componentContent";
+import { HttpCacheHeaderTagger } from "~/http-cache-header-tagger";
 
 export let loader: LoaderFunction = async ({ params }) => {
   const path = "/shop/" + params.product;
@@ -15,7 +16,7 @@ export let loader: LoaderFunction = async ({ params }) => {
     { path }
   );
 
-  return json({ ...data, path });
+  return json({ ...data, path }, HttpCacheHeaderTagger('30s', '1w', ['product', 'product-' + params.product]));
 };
 
 export let meta: MetaFunction = ({ data }) => {
@@ -31,6 +32,10 @@ export let meta: MetaFunction = ({ data }) => {
     "og:image": `${image}`,
   };
 };
+
+export function headers() {
+  return HttpCacheHeaderTagger('1m', '1w', ['product', 'product-index']).headers;
+}
 
 export default function Index() {
   let data = useLoaderData();

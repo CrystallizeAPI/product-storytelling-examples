@@ -15,6 +15,7 @@ import Grid from "@crystallize/grid-renderer/react";
 import { GridItem } from "../components/grid-item";
 import { Products } from "../components/products";
 import { componentContent } from "../crystallize/utils/componentContent";
+import { HttpCacheHeaderTagger } from "~/http-cache-header-tagger";
 
 export let loader: LoaderFunction = async () => {
   const path = "/frontpage";
@@ -23,7 +24,7 @@ export let loader: LoaderFunction = async () => {
     { path }
   );
 
-  return json({ ...data, path });
+  return json({ ...data, path }, HttpCacheHeaderTagger('30s', '1w', ['frontpage']));
 };
 
 export let meta: MetaFunction = ({ data }) => {
@@ -44,18 +45,23 @@ export let meta: MetaFunction = ({ data }) => {
   };
 };
 
+export function headers() {
+  return HttpCacheHeaderTagger('1m', '1w', ['index']).headers;
+}
+
 export default function Index() {
   let { catalogue, donuts } = useLoaderData();
   let { grid } = catalogue;
 
   const children = ({ cells }) => {
-    return cells.map((cell) => (
+    return cells.map((cell, index) => (
       <div
         style={{
           gridColumn: `span ${cell.layout.colspan}`,
           gridRow: `span ${cell.layout.rowspan}`,
         }}
         id="grid-item"
+        key={'cell'+index}
       >
         <GridItem cell={cell} />
       </div>
