@@ -1,4 +1,3 @@
-import { Request } from 'remix';
 import parse from 'parse-duration';
 
 export type HttpCacheHeaders = {
