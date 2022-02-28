@@ -24,7 +24,7 @@ module.exports = async function stripeToCrystallizeOrderModel({
       email = addressWithEmail.email;
     }
   }
-
+  let deliveryAddress = checkoutModel.customer?.addresses[1]
   const meta = [];
   meta.push({ key: "isFirstOrder", value: isFirstOrder ? "1" : "0" });
   if (paymentIntent.merchant_data) {
@@ -52,8 +52,8 @@ module.exports = async function stripeToCrystallizeOrderModel({
           lastName: customerName[customerName.length - 1],
           street: charge.billing_details.address.line1,
           street2: charge.billing_details.address.line2,
-          postalCode: charge.billing_details.address.postal_code,
-          city: charge.billing_details.address.city,
+          postalCode: deliveryAddress?.postalCode,
+          city: deliveryAddress?.city,
           state: charge.billing_details.address.state,
           country: charge.billing_details.address.country,
           phone: charge.billing_details.phone,
@@ -64,7 +64,7 @@ module.exports = async function stripeToCrystallizeOrderModel({
           firstName: customerName[0],
           middleName: customerName.slice(1, customerName.length - 1).join(),
           lastName: customerName[customerName.length - 1],
-          street: charge.billing_details.address.line1,
+          street: deliveryAddress?.street,
           street2: charge.billing_details.address.line2,
           postalCode: charge.billing_details.address.postal_code,
           city: charge.billing_details.address.city,
