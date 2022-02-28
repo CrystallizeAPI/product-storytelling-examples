@@ -1,14 +1,14 @@
-# fly.toml file generated for still-violet-6681 on 2022-02-25T11:15:03+01:00
+# fly.toml file generated for dounot-superfast on 2022-02-28T12:04:20+01:00
 
-app = "still-violet-6681"
+app = "dounot-superfast"
 
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
 [env]
-CRYSTALLIZE_TENANT_IDENTIFIER="dounot"
-SERVICE_API_URL="https://product-storytelling-service-api.vercel.app/api/graphql"
+  CRYSTALLIZE_TENANT_IDENTIFIER = "dounot"
+  SERVICE_API_URL = "https://product-storytelling-service-api.vercel.app/api/graphql"
 
 [experimental]
   allowed_public_ports = []
