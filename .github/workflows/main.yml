@@ -6,6 +6,7 @@ jobs:
   deploy:
       name: Deploy app
       runs-on: ubuntu-latest
+      working-directory: ./remix
       steps:
         - uses: actions/checkout@v2
         - uses: superfly/flyctl-actions@1.3
