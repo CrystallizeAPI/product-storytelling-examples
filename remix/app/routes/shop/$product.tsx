@@ -16,14 +16,19 @@ export let loader: LoaderFunction = async ({ params }) => {
     { path }
   );
 
-  return json({ ...data, path }, HttpCacheHeaderTagger('30s', '1w', ['product', 'product-' + params.product]));
+  return json(
+    { ...data, path },
+    HttpCacheHeaderTagger("30s", "1w", ["product", "product-" + params.product])
+  );
 };
 
 export let meta: MetaFunction = ({ data }) => {
   let { product } = data;
-  let description = componentContent(product?.summary?.content, "RichTextContent")
-    ?.plainText[0];
-    let image = product?.defaultVariant?.firstImage.url
+  let description = componentContent(
+    product?.summary?.content,
+    "RichTextContent"
+  )?.plainText[0];
+  let image = product?.defaultVariant?.firstImage.url;
 
   return {
     title: `${product?.name} | Dounut`,
@@ -34,12 +39,13 @@ export let meta: MetaFunction = ({ data }) => {
 };
 
 export function headers() {
-  return HttpCacheHeaderTagger('1m', '1w', ['product', 'product-index']).headers;
+  return HttpCacheHeaderTagger("1m", "1w", ["product", "product-index"])
+    .headers;
 }
 
 export default function Index() {
   let data = useLoaderData();
-  console.log(data)
+  console.log(data);
   return (
     <div>
       <div

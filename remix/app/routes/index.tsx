@@ -3,7 +3,6 @@ import {
   json,
   LoaderFunction,
   MetaFunction,
-  HeadersFunction,
 } from "remix";
 import { catalogueClient } from "../clients";
 import {

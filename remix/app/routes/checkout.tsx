@@ -5,9 +5,17 @@ import { useState } from "react";
 import { CheckoutModelInput } from "../service-api/types.generated";
 
 export default function Checkout() {
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [state, setState] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    street: "",
+    city: "",
+    postalCode: "",
+  });
+
+  const { firstName, lastName, email, street, city, postalCode } = state;
+
   const basket = useBasket();
 
   function getURL(path: string) {
@@ -17,7 +25,19 @@ export default function Checkout() {
 
   const checkoutModel: CheckoutModelInput = {
     basketModel: basket.basketModel,
-    customer: { firstName, lastName, addresses: [{ type: "billing", email }] },
+    customer: {
+      firstName,
+      lastName,
+      addresses: [
+        { type: "billing", email },
+        {
+          type: "delivery",
+          street,
+          city,
+          postalCode,
+        },
+      ],
+    },
     confirmationURL: getURL(`/confirmation/{crystallizeOrderId}`),
     checkoutURL: getURL(`/checkout`),
     termsURL: getURL(`/terms`),
@@ -35,21 +55,42 @@ export default function Checkout() {
             name="First Name"
             placeholder="First name"
             className="w-full"
-            onChange={(e) => setFirstName(e.currentTarget.value)}
+            onChange={(e) => setState({ ...state, firstName: e.target.value })}
           />
           <input
             type="text"
             name="Last Name"
             placeholder="Last name"
             className="w-full"
-            onChange={(e) => setLastName(e.currentTarget.value)}
+            onChange={(e) => setState({ ...state, lastName: e.target.value })}
           />
           <input
             type="text"
             name="Email"
             placeholder="Email"
             className="w-full"
-            onChange={(e) => setEmail(e.currentTarget.value)}
+            onChange={(e) => setState({ ...state, email: e.target.value })}
+          />
+           <input
+            type="text"
+            name="Street"
+            placeholder="Street"
+            className="w-full"
+            onChange={(e) => setState({ ...state, street: e.target.value })}
+          />
+           <input
+            type="text"
+            name="City"
+            placeholder="City"
+            className="w-full"
+            onChange={(e) => setState({ ...state, city: e.target.value })}
+          />
+           <input
+            type="text"
+            name="Postal Code"
+            placeholder="Postal Code"
+            className="w-full"
+            onChange={(e) => setState({ ...state, postalCode: e.target.value })}
           />
         </Form>
       </div>
