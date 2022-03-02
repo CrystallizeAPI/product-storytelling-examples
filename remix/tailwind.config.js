@@ -78,7 +78,7 @@ module.exports = {
       },
       borderRadius: {
         "4xl": "2rem",
-        "full": "1000px"
+        full: "1000px",
       },
     },
   },

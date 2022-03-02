@@ -1,4 +1,5 @@
 import isEqual from "lodash/isEqual";
+import { useState } from "react";
 
 function reduceAttributes(variants) {
   return variants.reduce((acc, variant) => {
@@ -34,10 +35,10 @@ export const VariantSelector = ({
 }) => {
   const attributes = reduceAttributes(variants);
 
-  function onAttributeSelect({ attribute, value }) {
+  function onAttributeSelect({ attribute, value, e }) {
     const selectedAttributes = attributesToObject(selectedVariant);
+    setSelected(e);
     selectedAttributes[attribute] = value;
-
     // Get the most suitable variant
     let variant = variants.find((variant) => {
       if (isEqual(selectedAttributes, attributesToObject(variant))) {
@@ -51,6 +52,19 @@ export const VariantSelector = ({
     }
   }
 
+  function setSelected(e) {
+    e.target.classList[e.target.dataset.tw ? "add" : "remove"]("border-text");
+    // if (e.target.dataset.tw) {
+    //   e.target.classList.toggle("border-2");
+    //   e.target.classList.toggle("border-text");
+    // } else {
+    //   e.target.classList.remove("border-2");
+    //   e.target.classList.remove("border-text");
+    // }
+
+    // console.log(e.target.dataset.tw);
+  }
+
   return (
     <div>
       {Object.keys(attributes).map((attribute) => {
@@ -62,6 +76,7 @@ export const VariantSelector = ({
         if (!selectedAttr) {
           return null;
         }
+
         return (
           <div key={attribute} className="w-40">
             <p className="my-3 text-text font-semibold">{attribute}</p>
@@ -69,14 +84,19 @@ export const VariantSelector = ({
               {attr.map((value) => (
                 <button
                   key={value}
-                  onClick={() =>
+                  onClick={(e) =>
                     onAttributeSelect({
                       attribute,
                       value,
+                      e,
                     })
                   }
                   type="button"
-                  className="bg-white drop-shadow-sm w-30 px-3 py-2 rounded-sm text-text font-semibold focus:outline-none focus:ring focus:ring-text"
+                  className="bg-white drop-shadow-sm w-30 px-3 py-2 rounded-sm text-text font-semibold focus:outline-none"
+                  style={{
+                    border:
+                      value === selectedAttr.value ? "3px solid #373567" : "none",
+                  }}
                 >
                   {value}
                 </button>

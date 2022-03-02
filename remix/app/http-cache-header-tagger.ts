@@ -17,7 +17,7 @@ export type HttpCacheHeaders = {
 export function HttpCacheHeaderTagger(maxAge: string, sharedMaxAge: string, tags: string[]): HttpCacheHeaders {
     return {
         headers: {
-            'Cache-Control': `public, max-age=${parse(maxAge, 's')}, s-maxage=${parse(sharedMaxAge, 's')}`,
+            'Cache-Control': `public, max-age=${parse(maxAge, 's')}, s-maxage=${parse(sharedMaxAge, 's')}, stale-while-revalidate=3600`,
             'xkey': tags.join(','),
             'Surrogate-Key': tags.join(',')
         }

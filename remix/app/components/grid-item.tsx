@@ -8,7 +8,8 @@ export const GridItem = ({ cell }) => {
       <div className="flex relative lg:flex-row flex-col">
         <Image
           {...cell.item?.variants[0]?.images[0]}
-          sizes="(max-width: 1024px) 100vw, 400px"
+          sizes="(max-width: 700px) 300px, 500px"
+          style={{ width: "100%", height: "100%" }}
           className="lg:absolute lg:top-0 lg:bottom-0 lg:right-0  lg:w-8/12 overflow-hidden rounded-r-xl"
         />
         <div className="flex flex-col justify-evenly lg:w-128  px-5 bg-background1 h-80 p-5 rounded-xl w-full lg:items-start items-center">
@@ -31,9 +32,7 @@ export const GridItem = ({ cell }) => {
     </Link>
   ) : (
     <Link to={cell.item.path} prefetch="intent">
-      <div
-        className={`flex flex-col bg-background1 px-5 py-7 rounded-xl lg:h-106 h-full`}
-      >
+      <div className="flex flex-col bg-background1 px-5 py-7 rounded-xl lg:h-106 h-full">
         <div className="flex justify-between items-start">
           <div className="flex gap-1">
             {cell.item.topics?.map((topic) => (
@@ -49,7 +48,9 @@ export const GridItem = ({ cell }) => {
         </div>
         <Image
           {...cell.item.variants[0]?.images[0]}
-          sizes="(max-width: 1024px) 100vw, 400px"
+          sizes="(max-width: 700px) 200px, 500px"
+          style={{ width: "100%", height: "100%" }}
+          loading="lazy"
         />
         <h2 className="text-3xl font-bold text-center w-40 m-auto">
           {cell.item.name}

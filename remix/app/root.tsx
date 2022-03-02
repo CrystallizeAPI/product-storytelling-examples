@@ -7,6 +7,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useCatch,
   useLoaderData,
 } from "remix";
 import type { MetaFunction } from "remix";
@@ -15,6 +16,7 @@ import { BasketProvider } from "./components/basket";
 import { locale } from "./config/locale";
 import { BasketButton } from "./components/basket/basket-button";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ErrorComponent } from "./components/404";
 
 const queryClient = new QueryClient();
 
@@ -30,38 +32,38 @@ export const loader: LoaderFunction = () => {
   return {
     ENV: {
       SERVICE_API_URL: process.env.SERVICE_API_URL,
-      TENANT_IDENTIFIER: process.env.CRYSTALLIZE_TENANT_IDENTIFIER
+      TENANT_IDENTIFIER: process.env.CRYSTALLIZE_TENANT_IDENTIFIER,
     },
   };
 };
 
 export default function App() {
   const data = useLoaderData();
-  
+
   return (
     <html lang="en" className="bg-primary relative z-10">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
-        <Links/>
+        <Links />
       </head>
       <body>
-      <QueryClientProvider client={queryClient}>
-        <BasketProvider locale={locale}>
-          <Layout>
-            <Outlet />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
-              }}
-            />
+        <QueryClientProvider client={queryClient}>
+          <BasketProvider locale={locale}>
+            <Layout>
+              <Outlet />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
+                }}
+              ></script>
 
-            <ScrollRestoration />
-            <Scripts />
-            {process.env.NODE_ENV === "development" && <LiveReload />}
-          </Layout>
-        </BasketProvider>
+              <ScrollRestoration />
+              <Scripts />
+              {process.env.NODE_ENV === "development" && <LiveReload />}
+            </Layout>
+          </BasketProvider>
         </QueryClientProvider>
       </body>
     </html>
@@ -73,10 +75,20 @@ function Layout({ children }) {
     <div className="remix-app lg:w-content w-full mx-auto p-8 sm:px-6">
       <header className="remix-app__header">
         <div className="container remix-app__header-content flex justify-between">
-          <Link prefetch="intent" to="/" title="Remix" className="remix-app__header-home-link">
+          <Link
+            prefetch="intent"
+            to="/"
+            title="Remix"
+            className="remix-app__header-home-link"
+          >
             <Logo />
           </Link>
-          <Link prefetch="intent" to="/cart" title="Your cart" className="remix-app__header-link">
+          <Link
+            prefetch="intent"
+            to="/cart"
+            title="Your cart"
+            className="remix-app__header-link"
+          >
             <BasketButton />
           </Link>
         </div>
@@ -86,7 +98,12 @@ function Layout({ children }) {
       </div>
       <footer className="remix-app__footer">
         <div className="container remix-app__footer-content mt-40">
-          <Link prefetch="intent" to="/" title="Remix" className="remix-app__header-home-link">
+          <Link
+            prefetch="intent"
+            to="/"
+            title="Remix"
+            className="remix-app__header-home-link"
+          >
             <Logo />
           </Link>
         </div>
@@ -114,5 +131,41 @@ function Logo(props: React.ComponentPropsWithoutRef<"svg">) {
         fill="#373567"
       />
     </svg>
+  );
+}
+
+export function ErrorBoundary({ error }) {
+  return (
+    <html className="bg-primary">
+      <head>
+        <title>Oh no!</title>
+        <Meta />
+        <Links />
+      </head>
+      <body style={{ height: "100vh" }}>
+        <Layout>
+          <ErrorComponent />
+        </Layout>
+        <Scripts />
+      </body>
+    </html>
+  );
+}
+
+export function CatchBoundary() {
+  return (
+    <html className="bg-primary">
+      <head>
+        <title>Oh no!</title>
+        <Meta />
+        <Links />
+      </head>
+      <body style={{ height: "100vh" }}>
+        <Layout>
+          <ErrorComponent />
+        </Layout>
+        <Scripts />
+      </body>
+    </html>
   );
 }

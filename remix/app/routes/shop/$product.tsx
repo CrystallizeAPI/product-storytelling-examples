@@ -45,7 +45,7 @@ export function headers() {
 
 export default function Index() {
   let data = useLoaderData();
-  console.log(data);
+ 
   return (
     <div>
       <div

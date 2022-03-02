@@ -17,7 +17,7 @@ export const RelatedProducts = ({ related }: RelatedProductProps) => {
             prefetch="intent"
             to={item.path}
             key={index}
-            className="bg-primary px-4 py-3 rounded-xl border-2 border-grey md:w-80 w-full"
+            className="bg-primary px-4 py-3 rounded-xl border-2 border-grey md:w-80 w-full h-80"
           >
             <div className="flex flex-col">
               <div className="flex justify-between">

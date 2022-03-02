@@ -2,7 +2,16 @@ import { useBasket } from "./index";
 import { Link } from "remix";
 
 export const BasketButton = () => {
-  const { totalQuantity } = useBasket();
+
+  let totalQuantity;
+  const basket = useBasket();
+
+  if (basket) {
+    totalQuantity = basket.totalQuantity;
+  } else {
+    totalQuantity = "0";
+  }
+
   return (
     <div className="relative">
       <svg

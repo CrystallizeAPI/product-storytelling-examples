@@ -9,6 +9,8 @@ processes = []
 [env]
   CRYSTALLIZE_TENANT_IDENTIFIER = "dounot"
   SERVICE_API_URL = "https://product-storytelling-service-api.vercel.app/api/graphql"
+  NODE_ENV="production"
+  fly = "true"
 
 [experimental]
   allowed_public_ports = []

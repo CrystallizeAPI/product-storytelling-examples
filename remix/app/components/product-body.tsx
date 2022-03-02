@@ -32,7 +32,7 @@ export const ProductBody = ({ body, table }: ProductBodyProps) => {
           {paragraph.images && (
             <div className="my-5">
               {paragraph?.images?.map((image) => (
-                <Image {...image}  sizes="(max-width: 1024px) 100vw, 500px" className="rounded-xl overflow-hidden"/>
+                <Image {...image}  sizes="(max-width: 1024px) 100vw, 500px" className="rounded-xl overflow-hidden" loading="lazy"/>
               ))}
             </div>
           )}
