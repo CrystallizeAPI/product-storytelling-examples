@@ -16,6 +16,9 @@ module.exports = async function itemPublished(payload) {
       `https://dounot.milliseconds.live${paths[path]}`,
       {
         method: "PURGE",
+        headers: {
+          'Fastly-Soft-Purge': '1'
+        },
       }
     )
       .then((res) => res.json())
