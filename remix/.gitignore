@@ -5,3 +5,4 @@ node_modules
 .env
 /netlify/functions/server/build
 /.netlify
+/build
