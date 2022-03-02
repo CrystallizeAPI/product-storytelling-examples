@@ -1,0 +1,15 @@
+name: serviceapi
+type: 'nodejs:16'
+
+build:
+    flavor: default
+
+web:
+    commands:
+        start: npx next start
+
+hooks:
+    build: |
+        npm run build        
+
+disk: 1024
