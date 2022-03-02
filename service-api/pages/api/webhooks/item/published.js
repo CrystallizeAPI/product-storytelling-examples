@@ -9,11 +9,11 @@ import itemPublished from "../../../../src/webhooks/item/published";
 export default async function webhookItemPublished(req, res) {
   try {
     await itemPublished(req.body);
-    res.status(200).send("ok");
+    res.status(200);
+    res.send({"message": "Paths purged succesfully"})
   } catch (e) {
     console.log("Error at itemPublished webhook");
     console.log(e);
-
     res.status(500).send("error");
   }
 }
