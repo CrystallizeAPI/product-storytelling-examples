@@ -1,5 +1,3 @@
-const path = require("node:path/posix");
-
 module.exports = async function itemPublished(payload) {
   console.log("Webhook payload: itemPublished");
   console.log(JSON.stringify(payload, null, 2));
