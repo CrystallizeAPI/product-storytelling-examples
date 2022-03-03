@@ -9,6 +9,7 @@ query Product($path: String!) {
     table: component(id: "nutrition") {
       ...component # PropertiesTable
     }
+
     ... on Product {
       __typename
       id

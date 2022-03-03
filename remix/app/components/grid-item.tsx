@@ -9,7 +9,6 @@ export const GridItem = ({ cell }) => {
         <Image
           {...cell.item?.variants[0]?.images[0]}
           sizes="(max-width: 700px) 300px, 500px"
-          style={{ width: "100%", height: "100%" }}
           className="lg:absolute lg:top-0 lg:bottom-0 lg:right-0  lg:w-8/12 overflow-hidden rounded-r-xl"
         />
         <div className="flex flex-col justify-evenly lg:w-128  px-5 bg-background1 h-80 p-5 rounded-xl w-full lg:items-start items-center">

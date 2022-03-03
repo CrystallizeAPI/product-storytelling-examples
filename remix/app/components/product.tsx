@@ -16,13 +16,12 @@ interface ProductProps {
 export const Product = ({ product }: ProductProps) => {
   let item = componentContent(product, "Product");
   const [selectedVariant, setSelectedVariant] = useState(item.variants[0]);
-  //const [showNotification, setShowNotification] = useState(false);
   const basket = useBasket();
 
   const onVariantChange = (variant) => setSelectedVariant(variant);
 
   const buy = () => {
-    // setShowNotification(true);
+  
     basket?.actions?.addItem({
       id: selectedVariant.id,
       sku: selectedVariant.sku,
@@ -34,7 +33,6 @@ export const Product = ({ product }: ProductProps) => {
 
   return (
     <div className="py-5">
-      {/* {showNotification ? <Notification /> : null} */}
       <div className="flex lg:flex-row flex-col items-center mt-10 mb-5">
         <div className="flex flex-col text-text w-6/12">
           <h1 className="font-extrabold text-5xl mb-3">{item.name}</h1>
