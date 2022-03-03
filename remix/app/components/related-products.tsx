@@ -38,7 +38,8 @@ export const RelatedProducts = ({ related }: RelatedProductProps) => {
 
               <Image
                 {...componentContent(item, "Product").defaultVariant.firstImage}
-                sizes="(max-width: 1024px) 100vw, 400px"
+                sizes="500px"
+                loading="lazy"
               />
               <h2 className="text-l text-center m-auto">{item.name}</h2>
             </div>
