@@ -28,6 +28,11 @@ Running the project in development is very straightforward. To run the project, 
 npm run dev
 ```
 
+> Note: In order to disable LiveReload on Production we had to create a new NODE_EXECUTION_MODE variable to indicate the correct execution mode to the app.
+> Indeed, Remix was using NODE_ENV correctly but it was always passing NODE_ENV === 'development' to the application.
+> It might be a Remix bug.
+
+
 ## Accessing the Development Site
 
 

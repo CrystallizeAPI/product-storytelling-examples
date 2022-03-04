@@ -33,6 +33,7 @@ export const loader: LoaderFunction = () => {
     ENV: {
       SERVICE_API_URL: process.env.SERVICE_API_URL,
       TENANT_IDENTIFIER: process.env.CRYSTALLIZE_TENANT_IDENTIFIER,
+      NODE_EXECUTION_MODE: process.env.NODE_EXECUTION_MODE
     },
   };
 };
@@ -61,7 +62,7 @@ export default function App() {
 
               <ScrollRestoration />
               <Scripts />
-              {process.env.NODE_ENV === "development" && <LiveReload />}
+              {data.ENV.NODE_EXECUTION_MODE === "development" && <LiveReload />}
             </Layout>
           </BasketProvider>
         </QueryClientProvider>

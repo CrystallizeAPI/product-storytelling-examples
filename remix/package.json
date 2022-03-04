@@ -5,13 +5,13 @@
   "license": "",
   "sideEffects": false,
   "scripts": {
-    "build": "cross-env NODE_ENV=production remix build && npm run build:css",
+    "build": "cross-env NODE_ENV=production NODE_EXECUTION_MODE=production remix build && npm run build:css",
     "build:css": "tailwindcss -i ./app/styles/index.css -o ./app/styles/tailwind.css --minify",
     "deploy": "fly deploy --remote-only",
-    "dev": "cross-env NODE_ENV=development remix dev",
+    "dev": "cross-env NODE_ENV=development NODE_EXECUTION_MODE=development remix dev",
     "dev:css": "tailwindcss -i ./app/styles/index.css -o ./app/styles/tailwind.css --watch",
     "postinstall": "remix setup node",
-    "start": "cross-env NODE_ENV=production remix-serve build",
+    "start": "cross-env NODE_ENV=production NODE_EXECUTION_MODE=production remix-serve build",
     "generate": "yarn generate:pim && yarn generate:service-api",
     "generate:pim": "graphql-codegen --config codegen.pim.yml",
     "generate:service-api": "graphql-codegen --config codegen.service-api.yml"
