@@ -1,0 +1,159 @@
+fragment content on ComponentContent {
+  ...singleLine
+  ...richText
+  ...boolean
+  ...numeric
+  ...location
+  ...dateTime
+  ...selection
+  ...images
+  ...videos
+  ...paragraphCollection
+  ...propertiesTable
+
+  # won't support
+  # need to query relation manually
+  # because each relation will be of different "shape"
+  # ...itemRelations
+  # ...gridRelations
+}
+
+fragment contentChunk on ContentChunkContent {
+  __typename
+  chunks {
+    content {
+      ...content
+    }
+  }
+}
+
+fragment component on Component {
+  __typename
+  content {
+    ...content
+    ...contentChunk
+  }
+}
+
+# Content fragments
+
+fragment singleLine on SingleLineContent {
+  __typename
+  text
+}
+
+fragment richText on RichTextContent {
+  __typename
+  json
+  html
+  plainText
+}
+
+fragment boolean on BooleanContent {
+  __typename
+  value
+}
+
+fragment numeric on NumericContent {
+  __typename
+  number
+  unit
+}
+
+fragment location on LocationContent {
+  __typename
+  lat
+  long
+}
+
+fragment dateTime on DatetimeContent {
+  __typename
+  datetime
+}
+
+fragment selection on SelectionContent {
+  __typename
+  options {
+    key
+    value
+  }
+}
+
+fragment images on ImageContent {
+  __typename
+  images {
+    ...image
+  }
+}
+
+fragment image on Image {
+  __typename
+  url
+  altText
+  key
+  variants {
+    url
+    key
+    width
+    height
+    size
+  }
+}
+
+fragment videos on VideoContent {
+  __typename
+  videos {
+    ...video
+  }
+}
+
+fragment video on Video {
+  __typename
+  id
+  title
+  playlists
+  thumbnails {
+    ...image
+  }
+}
+
+fragment paragraphCollection on ParagraphCollectionContent {
+  __typename
+  paragraphs {
+    title {
+      ...singleLine
+    }
+    body {
+      ...richText
+    }
+    images {
+      ...image
+      caption {
+        ...richText
+      }
+    }
+    videos {
+      title
+      playlists
+      thumbnails {
+        caption {
+          ...richText
+        }
+      }
+    }
+  }
+}
+
+fragment propertiesTable on PropertiesTableContent {
+  __typename
+  sections {
+    ... on PropertiesTableSection {
+      __typename
+      title
+      properties {
+        key
+        value
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 2021
+  },
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "Promise": true
+  }
+}
