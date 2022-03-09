@@ -1,4 +1,5 @@
-# Product Storytelling
+# Remix Boiler Plate
+
 The product storytelling boilerplate is a minimal eCommerce boilerplate built using Remix and Crystallize. You can also check out the [live demo](https://dounot.milliseconds.live/) of this boilerplate.
 
 ![dounot-frontpage](https://user-images.githubusercontent.com/26195876/156512917-e86bc64d-6069-4ed8-9705-74134b40a257.png)
