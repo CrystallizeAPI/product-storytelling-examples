@@ -45,7 +45,7 @@ export const Product = ({ product }: ProductProps) => {
         </div>
         <Image
           {...item.defaultVariant.firstImage}
-          sizes="(max-width: 1024px) 100vw, 400px"
+          sizes="400px"
           className="w-full rounded-sm"
         />
         <div className="flex flex-col">

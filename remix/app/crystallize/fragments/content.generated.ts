@@ -67,11 +67,15 @@ export type Content_ParagraphCollectionContent_Fragment = (
       { __typename?: 'Video' }
       & Pick<Types.Video, 'title' | 'playlists'>
       & { thumbnails?: Types.Maybe<Array<(
-        { __typename?: 'Image' }
+        { __typename: 'Image' }
+        & Pick<Types.Image, 'url' | 'altText' | 'key'>
         & { caption?: Types.Maybe<(
           { __typename: 'RichTextContent' }
           & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-        )> }
+        )>, variants?: Types.Maybe<Array<(
+          { __typename?: 'ImageVariant' }
+          & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+        )>> }
       )>> }
     )>> }
   )>> }
@@ -175,11 +179,15 @@ export type ContentChunkFragment = (
           { __typename?: 'Video' }
           & Pick<Types.Video, 'title' | 'playlists'>
           & { thumbnails?: Types.Maybe<Array<(
-            { __typename?: 'Image' }
+            { __typename: 'Image' }
+            & Pick<Types.Image, 'url' | 'altText' | 'key'>
             & { caption?: Types.Maybe<(
               { __typename: 'RichTextContent' }
               & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-            )> }
+            )>, variants?: Types.Maybe<Array<(
+              { __typename?: 'ImageVariant' }
+              & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+            )>> }
           )>> }
         )>> }
       )>> }
@@ -278,11 +286,15 @@ export type ComponentFragment = (
             { __typename?: 'Video' }
             & Pick<Types.Video, 'title' | 'playlists'>
             & { thumbnails?: Types.Maybe<Array<(
-              { __typename?: 'Image' }
+              { __typename: 'Image' }
+              & Pick<Types.Image, 'url' | 'altText' | 'key'>
               & { caption?: Types.Maybe<(
                 { __typename: 'RichTextContent' }
                 & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-              )> }
+              )>, variants?: Types.Maybe<Array<(
+                { __typename?: 'ImageVariant' }
+                & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+              )>> }
             )>> }
           )>> }
         )>> }
@@ -367,11 +379,15 @@ export type ComponentFragment = (
         { __typename?: 'Video' }
         & Pick<Types.Video, 'title' | 'playlists'>
         & { thumbnails?: Types.Maybe<Array<(
-          { __typename?: 'Image' }
+          { __typename: 'Image' }
+          & Pick<Types.Image, 'url' | 'altText' | 'key'>
           & { caption?: Types.Maybe<(
             { __typename: 'RichTextContent' }
             & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-          )> }
+          )>, variants?: Types.Maybe<Array<(
+            { __typename?: 'ImageVariant' }
+            & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+          )>> }
         )>> }
       )>> }
     )>> }
@@ -526,11 +542,15 @@ export type ParagraphCollectionFragment = (
       { __typename?: 'Video' }
       & Pick<Types.Video, 'title' | 'playlists'>
       & { thumbnails?: Types.Maybe<Array<(
-        { __typename?: 'Image' }
+        { __typename: 'Image' }
+        & Pick<Types.Image, 'url' | 'altText' | 'key'>
         & { caption?: Types.Maybe<(
           { __typename: 'RichTextContent' }
           & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-        )> }
+        )>, variants?: Types.Maybe<Array<(
+          { __typename?: 'ImageVariant' }
+          & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+        )>> }
       )>> }
     )>> }
   )>> }
@@ -559,7 +579,7 @@ export const ImageFragmentDoc = {"kind":"Document","definitions":[{"kind":"Fragm
 export const ImagesFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"images"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ImageContent"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"images"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"image"}}]}}]}},...ImageFragmentDoc.definitions]} as unknown as DocumentNode<ImagesFragment, unknown>;
 export const VideoFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"video"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Video"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"playlists"}},{"kind":"Field","name":{"kind":"Name","value":"thumbnails"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"image"}}]}}]}},...ImageFragmentDoc.definitions]} as unknown as DocumentNode<VideoFragment, unknown>;
 export const VideosFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"videos"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"VideoContent"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"videos"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"video"}}]}}]}},...VideoFragmentDoc.definitions]} as unknown as DocumentNode<VideosFragment, unknown>;
-export const ParagraphCollectionFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"paragraphCollection"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ParagraphCollectionContent"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"paragraphs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"singleLine"}}]}},{"kind":"Field","name":{"kind":"Name","value":"body"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"richText"}}]}},{"kind":"Field","name":{"kind":"Name","value":"images"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"image"}},{"kind":"Field","name":{"kind":"Name","value":"caption"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"richText"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"videos"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"playlists"}},{"kind":"Field","name":{"kind":"Name","value":"thumbnails"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"caption"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"richText"}}]}}]}}]}}]}}]}},...SingleLineFragmentDoc.definitions,...RichTextFragmentDoc.definitions,...ImageFragmentDoc.definitions]} as unknown as DocumentNode<ParagraphCollectionFragment, unknown>;
+export const ParagraphCollectionFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"paragraphCollection"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ParagraphCollectionContent"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"paragraphs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"singleLine"}}]}},{"kind":"Field","name":{"kind":"Name","value":"body"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"richText"}}]}},{"kind":"Field","name":{"kind":"Name","value":"images"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"image"}},{"kind":"Field","name":{"kind":"Name","value":"caption"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"richText"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"videos"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"playlists"}},{"kind":"Field","name":{"kind":"Name","value":"thumbnails"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"image"}},{"kind":"Field","name":{"kind":"Name","value":"caption"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"richText"}}]}}]}}]}}]}}]}},...SingleLineFragmentDoc.definitions,...RichTextFragmentDoc.definitions,...ImageFragmentDoc.definitions]} as unknown as DocumentNode<ParagraphCollectionFragment, unknown>;
 export const PropertiesTableFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"propertiesTable"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PropertiesTableContent"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"sections"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"PropertiesTableSection"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"properties"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}}]}}]}}]}}]} as unknown as DocumentNode<PropertiesTableFragment, unknown>;
 export const ContentFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"content"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentContent"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"singleLine"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"richText"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"boolean"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"numeric"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"location"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"dateTime"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"selection"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"images"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"videos"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"paragraphCollection"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"propertiesTable"}}]}},...SingleLineFragmentDoc.definitions,...RichTextFragmentDoc.definitions,...BooleanFragmentDoc.definitions,...NumericFragmentDoc.definitions,...LocationFragmentDoc.definitions,...DateTimeFragmentDoc.definitions,...SelectionFragmentDoc.definitions,...ImagesFragmentDoc.definitions,...VideosFragmentDoc.definitions,...ParagraphCollectionFragmentDoc.definitions,...PropertiesTableFragmentDoc.definitions]} as unknown as DocumentNode<ContentFragment, unknown>;
 export const ContentChunkFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"contentChunk"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ContentChunkContent"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"chunks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"content"}}]}}]}}]}},...ContentFragmentDoc.definitions]} as unknown as DocumentNode<ContentChunkFragment, unknown>;

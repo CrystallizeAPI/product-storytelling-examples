@@ -10,6 +10,7 @@ interface ProductBodyProps {
 }
 
 export const ProductBody = ({ body, table }: ProductBodyProps) => {
+  console.log(body);
   return (
     <div className="flex flex-col gap-3 my-10 lg:w-9/12 w-full mx-auto z-10">
       {componentContent(
@@ -32,7 +33,12 @@ export const ProductBody = ({ body, table }: ProductBodyProps) => {
           {paragraph.images && (
             <div className="my-5">
               {paragraph?.images?.map((image) => (
-                <Image {...image}  sizes="(max-width: 1024px) 100vw, 500px" className="rounded-xl overflow-hidden" loading="lazy"/>
+                <Image
+                  {...image}
+                  sizes="500px"
+                  className="rounded-xl overflow-hidden"
+                  loading="lazy"
+                />
               ))}
             </div>
           )}
@@ -42,7 +48,9 @@ export const ProductBody = ({ body, table }: ProductBodyProps) => {
                 controls
                 url={paragraph?.videos[0]?.playlists[1]}
                 width="100%"
-                height="100%"
+                height="400px"
+                light={paragraph?.videos[0]?.thumbnails[0]?.url}
+                playing={true}
               />
             </div>
           )}
@@ -50,14 +58,20 @@ export const ProductBody = ({ body, table }: ProductBodyProps) => {
       ))}
       {componentContent(table?.content, "PropertiesTableContent").sections.map(
         (section, index) => (
-          <div key={index} className="flex lg:flex-row flex-col justify-between text-text my-20">
+          <div
+            key={index}
+            className="flex lg:flex-row flex-col justify-between text-text my-20"
+          >
             <div>
               <h3 className="font-bold text-2xl py-2">{section?.title}</h3>
               <p className="italic">per 50 g</p>
             </div>
             <div className="lg:w-7/12 w-full">
               {section.properties.map((property, index) => (
-                <div key={index} className="flex justify-between my-3 even:bg-grey px-5 py-2">
+                <div
+                  key={index}
+                  className="flex justify-between my-3 even:bg-grey px-5 py-2"
+                >
                   <p>{property.key}</p>
                   <p>{property.value}</p>
                 </div>

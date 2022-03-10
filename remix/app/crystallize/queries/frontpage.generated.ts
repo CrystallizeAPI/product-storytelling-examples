@@ -66,11 +66,15 @@ export type FrontpageQuery = (
                 { __typename?: 'Video' }
                 & Pick<Types.Video, 'title' | 'playlists'>
                 & { thumbnails?: Types.Maybe<Array<(
-                  { __typename?: 'Image' }
+                  { __typename: 'Image' }
+                  & Pick<Types.Image, 'url' | 'altText' | 'key'>
                   & { caption?: Types.Maybe<(
                     { __typename: 'RichTextContent' }
                     & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-                  )> }
+                  )>, variants?: Types.Maybe<Array<(
+                    { __typename?: 'ImageVariant' }
+                    & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+                  )>> }
                 )>> }
               )>> }
             )>> }
@@ -155,11 +159,15 @@ export type FrontpageQuery = (
             { __typename?: 'Video' }
             & Pick<Types.Video, 'title' | 'playlists'>
             & { thumbnails?: Types.Maybe<Array<(
-              { __typename?: 'Image' }
+              { __typename: 'Image' }
+              & Pick<Types.Image, 'url' | 'altText' | 'key'>
               & { caption?: Types.Maybe<(
                 { __typename: 'RichTextContent' }
                 & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-              )> }
+              )>, variants?: Types.Maybe<Array<(
+                { __typename?: 'ImageVariant' }
+                & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+              )>> }
             )>> }
           )>> }
         )>> }
@@ -308,11 +316,15 @@ export type FrontpageQuery = (
                 { __typename?: 'Video' }
                 & Pick<Types.Video, 'title' | 'playlists'>
                 & { thumbnails?: Types.Maybe<Array<(
-                  { __typename?: 'Image' }
+                  { __typename: 'Image' }
+                  & Pick<Types.Image, 'url' | 'altText' | 'key'>
                   & { caption?: Types.Maybe<(
                     { __typename: 'RichTextContent' }
                     & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-                  )> }
+                  )>, variants?: Types.Maybe<Array<(
+                    { __typename?: 'ImageVariant' }
+                    & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+                  )>> }
                 )>> }
               )>> }
             )>> }
@@ -397,11 +409,15 @@ export type FrontpageQuery = (
             { __typename?: 'Video' }
             & Pick<Types.Video, 'title' | 'playlists'>
             & { thumbnails?: Types.Maybe<Array<(
-              { __typename?: 'Image' }
+              { __typename: 'Image' }
+              & Pick<Types.Image, 'url' | 'altText' | 'key'>
               & { caption?: Types.Maybe<(
                 { __typename: 'RichTextContent' }
                 & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-              )> }
+              )>, variants?: Types.Maybe<Array<(
+                { __typename?: 'ImageVariant' }
+                & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+              )>> }
             )>> }
           )>> }
         )>> }
@@ -550,11 +566,15 @@ export type FrontpageQuery = (
                 { __typename?: 'Video' }
                 & Pick<Types.Video, 'title' | 'playlists'>
                 & { thumbnails?: Types.Maybe<Array<(
-                  { __typename?: 'Image' }
+                  { __typename: 'Image' }
+                  & Pick<Types.Image, 'url' | 'altText' | 'key'>
                   & { caption?: Types.Maybe<(
                     { __typename: 'RichTextContent' }
                     & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-                  )> }
+                  )>, variants?: Types.Maybe<Array<(
+                    { __typename?: 'ImageVariant' }
+                    & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+                  )>> }
                 )>> }
               )>> }
             )>> }
@@ -639,11 +659,15 @@ export type FrontpageQuery = (
             { __typename?: 'Video' }
             & Pick<Types.Video, 'title' | 'playlists'>
             & { thumbnails?: Types.Maybe<Array<(
-              { __typename?: 'Image' }
+              { __typename: 'Image' }
+              & Pick<Types.Image, 'url' | 'altText' | 'key'>
               & { caption?: Types.Maybe<(
                 { __typename: 'RichTextContent' }
                 & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-              )> }
+              )>, variants?: Types.Maybe<Array<(
+                { __typename?: 'ImageVariant' }
+                & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+              )>> }
             )>> }
           )>> }
         )>> }

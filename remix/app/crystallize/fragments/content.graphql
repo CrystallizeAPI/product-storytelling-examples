@@ -136,6 +136,7 @@ fragment paragraphCollection on ParagraphCollectionContent {
       title
       playlists
       thumbnails {
+        ...image
         caption {
           ...richText
         }

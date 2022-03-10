@@ -66,11 +66,15 @@ export type ProductQuery = (
                 { __typename?: 'Video' }
                 & Pick<Types.Video, 'title' | 'playlists'>
                 & { thumbnails?: Types.Maybe<Array<(
-                  { __typename?: 'Image' }
+                  { __typename: 'Image' }
+                  & Pick<Types.Image, 'url' | 'altText' | 'key'>
                   & { caption?: Types.Maybe<(
                     { __typename: 'RichTextContent' }
                     & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-                  )> }
+                  )>, variants?: Types.Maybe<Array<(
+                    { __typename?: 'ImageVariant' }
+                    & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+                  )>> }
                 )>> }
               )>> }
             )>> }
@@ -155,11 +159,15 @@ export type ProductQuery = (
             { __typename?: 'Video' }
             & Pick<Types.Video, 'title' | 'playlists'>
             & { thumbnails?: Types.Maybe<Array<(
-              { __typename?: 'Image' }
+              { __typename: 'Image' }
+              & Pick<Types.Image, 'url' | 'altText' | 'key'>
               & { caption?: Types.Maybe<(
                 { __typename: 'RichTextContent' }
                 & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-              )> }
+              )>, variants?: Types.Maybe<Array<(
+                { __typename?: 'ImageVariant' }
+                & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+              )>> }
             )>> }
           )>> }
         )>> }
@@ -255,11 +263,15 @@ export type ProductQuery = (
                 { __typename?: 'Video' }
                 & Pick<Types.Video, 'title' | 'playlists'>
                 & { thumbnails?: Types.Maybe<Array<(
-                  { __typename?: 'Image' }
+                  { __typename: 'Image' }
+                  & Pick<Types.Image, 'url' | 'altText' | 'key'>
                   & { caption?: Types.Maybe<(
                     { __typename: 'RichTextContent' }
                     & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-                  )> }
+                  )>, variants?: Types.Maybe<Array<(
+                    { __typename?: 'ImageVariant' }
+                    & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+                  )>> }
                 )>> }
               )>> }
             )>> }
@@ -344,11 +356,15 @@ export type ProductQuery = (
             { __typename?: 'Video' }
             & Pick<Types.Video, 'title' | 'playlists'>
             & { thumbnails?: Types.Maybe<Array<(
-              { __typename?: 'Image' }
+              { __typename: 'Image' }
+              & Pick<Types.Image, 'url' | 'altText' | 'key'>
               & { caption?: Types.Maybe<(
                 { __typename: 'RichTextContent' }
                 & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-              )> }
+              )>, variants?: Types.Maybe<Array<(
+                { __typename?: 'ImageVariant' }
+                & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+              )>> }
             )>> }
           )>> }
         )>> }
@@ -444,11 +460,15 @@ export type ProductQuery = (
                 { __typename?: 'Video' }
                 & Pick<Types.Video, 'title' | 'playlists'>
                 & { thumbnails?: Types.Maybe<Array<(
-                  { __typename?: 'Image' }
+                  { __typename: 'Image' }
+                  & Pick<Types.Image, 'url' | 'altText' | 'key'>
                   & { caption?: Types.Maybe<(
                     { __typename: 'RichTextContent' }
                     & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-                  )> }
+                  )>, variants?: Types.Maybe<Array<(
+                    { __typename?: 'ImageVariant' }
+                    & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+                  )>> }
                 )>> }
               )>> }
             )>> }
@@ -533,11 +553,15 @@ export type ProductQuery = (
             { __typename?: 'Video' }
             & Pick<Types.Video, 'title' | 'playlists'>
             & { thumbnails?: Types.Maybe<Array<(
-              { __typename?: 'Image' }
+              { __typename: 'Image' }
+              & Pick<Types.Image, 'url' | 'altText' | 'key'>
               & { caption?: Types.Maybe<(
                 { __typename: 'RichTextContent' }
                 & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-              )> }
+              )>, variants?: Types.Maybe<Array<(
+                { __typename?: 'ImageVariant' }
+                & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+              )>> }
             )>> }
           )>> }
         )>> }
@@ -578,10 +602,7 @@ export type ProductQuery = (
           )>> }
         )>> }
       )> }
-    )>, topics?: Types.Maybe<Array<(
-      { __typename: 'Topic' }
-      & Pick<Types.Topic, 'name'>
-    )>>, related?: Types.Maybe<(
+    )>, related?: Types.Maybe<(
       { __typename?: 'Component' }
       & { content?: Types.Maybe<{ __typename: 'BooleanContent' } | { __typename: 'ComponentChoiceContent' } | { __typename: 'ContentChunkContent' } | { __typename: 'DatetimeContent' } | { __typename: 'FileContent' } | { __typename: 'GridRelationsContent' } | { __typename: 'ImageContent' } | (
         { __typename: 'ItemRelationsContent' }
@@ -677,11 +698,15 @@ export type ProductQuery = (
                 { __typename?: 'Video' }
                 & Pick<Types.Video, 'title' | 'playlists'>
                 & { thumbnails?: Types.Maybe<Array<(
-                  { __typename?: 'Image' }
+                  { __typename: 'Image' }
+                  & Pick<Types.Image, 'url' | 'altText' | 'key'>
                   & { caption?: Types.Maybe<(
                     { __typename: 'RichTextContent' }
                     & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-                  )> }
+                  )>, variants?: Types.Maybe<Array<(
+                    { __typename?: 'ImageVariant' }
+                    & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+                  )>> }
                 )>> }
               )>> }
             )>> }
@@ -766,11 +791,15 @@ export type ProductQuery = (
             { __typename?: 'Video' }
             & Pick<Types.Video, 'title' | 'playlists'>
             & { thumbnails?: Types.Maybe<Array<(
-              { __typename?: 'Image' }
+              { __typename: 'Image' }
+              & Pick<Types.Image, 'url' | 'altText' | 'key'>
               & { caption?: Types.Maybe<(
                 { __typename: 'RichTextContent' }
                 & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-              )> }
+              )>, variants?: Types.Maybe<Array<(
+                { __typename?: 'ImageVariant' }
+                & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+              )>> }
             )>> }
           )>> }
         )>> }
@@ -866,11 +895,15 @@ export type ProductQuery = (
                 { __typename?: 'Video' }
                 & Pick<Types.Video, 'title' | 'playlists'>
                 & { thumbnails?: Types.Maybe<Array<(
-                  { __typename?: 'Image' }
+                  { __typename: 'Image' }
+                  & Pick<Types.Image, 'url' | 'altText' | 'key'>
                   & { caption?: Types.Maybe<(
                     { __typename: 'RichTextContent' }
                     & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-                  )> }
+                  )>, variants?: Types.Maybe<Array<(
+                    { __typename?: 'ImageVariant' }
+                    & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+                  )>> }
                 )>> }
               )>> }
             )>> }
@@ -955,11 +988,15 @@ export type ProductQuery = (
             { __typename?: 'Video' }
             & Pick<Types.Video, 'title' | 'playlists'>
             & { thumbnails?: Types.Maybe<Array<(
-              { __typename?: 'Image' }
+              { __typename: 'Image' }
+              & Pick<Types.Image, 'url' | 'altText' | 'key'>
               & { caption?: Types.Maybe<(
                 { __typename: 'RichTextContent' }
                 & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-              )> }
+              )>, variants?: Types.Maybe<Array<(
+                { __typename?: 'ImageVariant' }
+                & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+              )>> }
             )>> }
           )>> }
         )>> }
@@ -1055,11 +1092,15 @@ export type ProductQuery = (
                 { __typename?: 'Video' }
                 & Pick<Types.Video, 'title' | 'playlists'>
                 & { thumbnails?: Types.Maybe<Array<(
-                  { __typename?: 'Image' }
+                  { __typename: 'Image' }
+                  & Pick<Types.Image, 'url' | 'altText' | 'key'>
                   & { caption?: Types.Maybe<(
                     { __typename: 'RichTextContent' }
                     & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-                  )> }
+                  )>, variants?: Types.Maybe<Array<(
+                    { __typename?: 'ImageVariant' }
+                    & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+                  )>> }
                 )>> }
               )>> }
             )>> }
@@ -1144,11 +1185,15 @@ export type ProductQuery = (
             { __typename?: 'Video' }
             & Pick<Types.Video, 'title' | 'playlists'>
             & { thumbnails?: Types.Maybe<Array<(
-              { __typename?: 'Image' }
+              { __typename: 'Image' }
+              & Pick<Types.Image, 'url' | 'altText' | 'key'>
               & { caption?: Types.Maybe<(
                 { __typename: 'RichTextContent' }
                 & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-              )> }
+              )>, variants?: Types.Maybe<Array<(
+                { __typename?: 'ImageVariant' }
+                & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+              )>> }
             )>> }
           )>> }
         )>> }
@@ -1189,10 +1234,7 @@ export type ProductQuery = (
           )>> }
         )>> }
       )> }
-    )>, topics?: Types.Maybe<Array<(
-      { __typename: 'Topic' }
-      & Pick<Types.Topic, 'name'>
-    )>>, related?: Types.Maybe<(
+    )>, related?: Types.Maybe<(
       { __typename?: 'Component' }
       & { content?: Types.Maybe<{ __typename: 'BooleanContent' } | { __typename: 'ComponentChoiceContent' } | { __typename: 'ContentChunkContent' } | { __typename: 'DatetimeContent' } | { __typename: 'FileContent' } | { __typename: 'GridRelationsContent' } | { __typename: 'ImageContent' } | (
         { __typename: 'ItemRelationsContent' }
@@ -1319,11 +1361,15 @@ export type ProductQuery = (
                 { __typename?: 'Video' }
                 & Pick<Types.Video, 'title' | 'playlists'>
                 & { thumbnails?: Types.Maybe<Array<(
-                  { __typename?: 'Image' }
+                  { __typename: 'Image' }
+                  & Pick<Types.Image, 'url' | 'altText' | 'key'>
                   & { caption?: Types.Maybe<(
                     { __typename: 'RichTextContent' }
                     & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-                  )> }
+                  )>, variants?: Types.Maybe<Array<(
+                    { __typename?: 'ImageVariant' }
+                    & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+                  )>> }
                 )>> }
               )>> }
             )>> }
@@ -1408,11 +1454,15 @@ export type ProductQuery = (
             { __typename?: 'Video' }
             & Pick<Types.Video, 'title' | 'playlists'>
             & { thumbnails?: Types.Maybe<Array<(
-              { __typename?: 'Image' }
+              { __typename: 'Image' }
+              & Pick<Types.Image, 'url' | 'altText' | 'key'>
               & { caption?: Types.Maybe<(
                 { __typename: 'RichTextContent' }
                 & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-              )> }
+              )>, variants?: Types.Maybe<Array<(
+                { __typename?: 'ImageVariant' }
+                & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+              )>> }
             )>> }
           )>> }
         )>> }
@@ -1508,11 +1558,15 @@ export type ProductQuery = (
                 { __typename?: 'Video' }
                 & Pick<Types.Video, 'title' | 'playlists'>
                 & { thumbnails?: Types.Maybe<Array<(
-                  { __typename?: 'Image' }
+                  { __typename: 'Image' }
+                  & Pick<Types.Image, 'url' | 'altText' | 'key'>
                   & { caption?: Types.Maybe<(
                     { __typename: 'RichTextContent' }
                     & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-                  )> }
+                  )>, variants?: Types.Maybe<Array<(
+                    { __typename?: 'ImageVariant' }
+                    & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+                  )>> }
                 )>> }
               )>> }
             )>> }
@@ -1597,11 +1651,15 @@ export type ProductQuery = (
             { __typename?: 'Video' }
             & Pick<Types.Video, 'title' | 'playlists'>
             & { thumbnails?: Types.Maybe<Array<(
-              { __typename?: 'Image' }
+              { __typename: 'Image' }
+              & Pick<Types.Image, 'url' | 'altText' | 'key'>
               & { caption?: Types.Maybe<(
                 { __typename: 'RichTextContent' }
                 & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-              )> }
+              )>, variants?: Types.Maybe<Array<(
+                { __typename?: 'ImageVariant' }
+                & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+              )>> }
             )>> }
           )>> }
         )>> }
@@ -1697,11 +1755,15 @@ export type ProductQuery = (
                 { __typename?: 'Video' }
                 & Pick<Types.Video, 'title' | 'playlists'>
                 & { thumbnails?: Types.Maybe<Array<(
-                  { __typename?: 'Image' }
+                  { __typename: 'Image' }
+                  & Pick<Types.Image, 'url' | 'altText' | 'key'>
                   & { caption?: Types.Maybe<(
                     { __typename: 'RichTextContent' }
                     & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-                  )> }
+                  )>, variants?: Types.Maybe<Array<(
+                    { __typename?: 'ImageVariant' }
+                    & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+                  )>> }
                 )>> }
               )>> }
             )>> }
@@ -1786,11 +1848,15 @@ export type ProductQuery = (
             { __typename?: 'Video' }
             & Pick<Types.Video, 'title' | 'playlists'>
             & { thumbnails?: Types.Maybe<Array<(
-              { __typename?: 'Image' }
+              { __typename: 'Image' }
+              & Pick<Types.Image, 'url' | 'altText' | 'key'>
               & { caption?: Types.Maybe<(
                 { __typename: 'RichTextContent' }
                 & Pick<Types.RichTextContent, 'json' | 'html' | 'plainText'>
-              )> }
+              )>, variants?: Types.Maybe<Array<(
+                { __typename?: 'ImageVariant' }
+                & Pick<Types.ImageVariant, 'url' | 'key' | 'width' | 'height' | 'size'>
+              )>> }
             )>> }
           )>> }
         )>> }
@@ -1831,10 +1897,7 @@ export type ProductQuery = (
           )>> }
         )>> }
       )> }
-    )>, topics?: Types.Maybe<Array<(
-      { __typename: 'Topic' }
-      & Pick<Types.Topic, 'name'>
-    )>>, related?: Types.Maybe<(
+    )>, related?: Types.Maybe<(
       { __typename?: 'Component' }
       & { content?: Types.Maybe<{ __typename: 'BooleanContent' } | { __typename: 'ComponentChoiceContent' } | { __typename: 'ContentChunkContent' } | { __typename: 'DatetimeContent' } | { __typename: 'FileContent' } | { __typename: 'GridRelationsContent' } | { __typename: 'ImageContent' } | (
         { __typename: 'ItemRelationsContent' }
@@ -1877,4 +1940,4 @@ export type ProductQuery = (
 );
 
 
-export const ProductDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Product"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"path"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"product"},"name":{"kind":"Name","value":"catalogue"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"path"},"value":{"kind":"Variable","name":{"kind":"Name","value":"path"}}},{"kind":"Argument","name":{"kind":"Name","value":"language"},"value":{"kind":"StringValue","value":"en","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"summary"},"name":{"kind":"Name","value":"component"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"StringValue","value":"brief","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"component"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"body"},"name":{"kind":"Name","value":"component"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"StringValue","value":"body","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"component"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"table"},"name":{"kind":"Name","value":"component"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"StringValue","value":"nutrition","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"component"}}]}},{"kind":"Field","name":{"kind":"Name","value":"topics"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Product"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"path"}},{"kind":"Field","name":{"kind":"Name","value":"defaultVariant"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"firstImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"altText"}},{"kind":"Field","name":{"kind":"Name","value":"variants"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"size"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"variants"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"sku"}},{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"priceVariants"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"identifier"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"currency"}}]}},{"kind":"Field","name":{"kind":"Name","value":"stock"}},{"kind":"Field","name":{"kind":"Name","value":"isDefault"}},{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attribute"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"images"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"altText"}},{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"variants"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"size"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"vatType"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"percent"}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"related"},"name":{"kind":"Name","value":"component"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"StringValue","value":"related","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ItemRelationsContent"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"path"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"topics"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Product"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"defaultVariant"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"firstImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"altText"}},{"kind":"Field","name":{"kind":"Name","value":"variants"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"size"}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}},...ComponentFragmentDoc.definitions]} as unknown as DocumentNode<ProductQuery, ProductQueryVariables>;
+export const ProductDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Product"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"path"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"product"},"name":{"kind":"Name","value":"catalogue"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"path"},"value":{"kind":"Variable","name":{"kind":"Name","value":"path"}}},{"kind":"Argument","name":{"kind":"Name","value":"language"},"value":{"kind":"StringValue","value":"en","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"summary"},"name":{"kind":"Name","value":"component"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"StringValue","value":"brief","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"component"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"body"},"name":{"kind":"Name","value":"component"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"StringValue","value":"body","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"component"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"table"},"name":{"kind":"Name","value":"component"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"StringValue","value":"nutrition","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"component"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Product"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"path"}},{"kind":"Field","name":{"kind":"Name","value":"defaultVariant"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"firstImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"altText"}},{"kind":"Field","name":{"kind":"Name","value":"variants"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"size"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"variants"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"sku"}},{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"priceVariants"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"identifier"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"currency"}}]}},{"kind":"Field","name":{"kind":"Name","value":"stock"}},{"kind":"Field","name":{"kind":"Name","value":"isDefault"}},{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attribute"}},{"kind":"Field","name":{"kind":"Name","value":"value"}}]}},{"kind":"Field","name":{"kind":"Name","value":"images"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"altText"}},{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"variants"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"size"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"vatType"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"percent"}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"related"},"name":{"kind":"Name","value":"component"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"StringValue","value":"related","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ItemRelationsContent"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"path"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"topics"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Product"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"defaultVariant"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"price"}},{"kind":"Field","name":{"kind":"Name","value":"firstImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"altText"}},{"kind":"Field","name":{"kind":"Name","value":"variants"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"size"}}]}}]}}]}}]}}]}}]}}]}}]}}]}}]}},...ComponentFragmentDoc.definitions]} as unknown as DocumentNode<ProductQuery, ProductQueryVariables>;
