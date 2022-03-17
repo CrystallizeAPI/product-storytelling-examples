@@ -10,7 +10,7 @@ interface ProductBodyProps {
 }
 
 export const ProductBody = ({ body, table }: ProductBodyProps) => {
-  console.log(body);
+  
   return (
     <div className="flex flex-col gap-3 my-10 lg:w-9/12 w-full mx-auto z-10">
       {componentContent(
@@ -35,7 +35,7 @@ export const ProductBody = ({ body, table }: ProductBodyProps) => {
               {paragraph?.images?.map((image) => (
                 <Image
                   {...image}
-                  sizes="500px"
+                  sizes="200px"
                   className="rounded-xl overflow-hidden"
                   loading="lazy"
                 />

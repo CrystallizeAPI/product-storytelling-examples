@@ -47,8 +47,7 @@ export const GridItem = ({ cell }) => {
         </div>
         <Image
           {...cell.item.variants[0]?.images[0]}
-          sizes="(max-width: 700px) 200px, 500px"
-          style={{ width: "100%", height: "100%" }}
+          sizes="(max-width: 700px) 200px, 300px"
           loading="lazy"
         />
         <h2 className="text-3xl font-bold text-center w-40 m-auto">

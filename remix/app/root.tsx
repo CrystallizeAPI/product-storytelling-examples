@@ -135,7 +135,7 @@ function Logo(props: React.ComponentPropsWithoutRef<"svg">) {
   );
 }
 
-export function ErrorBoundary({ error }) {
+export function ErrorBoundary() {
   return (
     <html className="bg-primary">
       <head>
