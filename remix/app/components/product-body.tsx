@@ -46,10 +46,10 @@ export const ProductBody = ({ body, table }: ProductBodyProps) => {
             <div className="my-5">
               <ReactPlayer
                 controls
-                url={paragraph?.videos[0]?.playlists[1]}
+                url={paragraph?.videos && paragraph?.videos.length>0 && paragraph?.videos[0].playlists[1]}
                 width="100%"
                 height="400px"
-                light={paragraph?.videos[0]?.thumbnails[0]?.url}
+                light={paragraph?.videos && paragraph?.videos.length >0 && paragraph?.videos[0].thumbnails && paragraph?.videos[0].thumbnails.length > 0 && paragraph?.videos[0].thumbnails[0].url}
                 playing={true}
               />
             </div>
