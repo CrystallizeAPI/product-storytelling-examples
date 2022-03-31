@@ -1,9 +1,4 @@
-import {
-  useLoaderData,
-  json,
-  LoaderFunction,
-  MetaFunction,
-} from "remix";
+import { useLoaderData, json, LoaderFunction, MetaFunction } from "remix";
 import { catalogueClient } from "../clients";
 import {
   FrontpageDocument,
@@ -16,14 +11,21 @@ import { Products } from "../components/products";
 import { componentContent } from "../crystallize/utils/componentContent";
 import { HttpCacheHeaderTagger } from "~/http-cache-header-tagger";
 
-export let loader: LoaderFunction = async () => {
+export let loader: LoaderFunction = async ({ request }) => {
+  const url = new URL(request.url);
+  // for the preview mode, if the query parameter preview=true is present, ask for the draft version
+  const preview = url.searchParams.get("preview");
+  const version = preview ? "draft" : "published";
   const path = "/frontpage";
   const data = await catalogueClient.request<FrontpageQuery>(
     normalizeDocumentNode(FrontpageDocument),
-    { path }
+    { path, version }
   );
 
-  return json({ ...data, path }, HttpCacheHeaderTagger('30s', '1w', ['frontpage']));
+  return json(
+    { ...data, path },
+    HttpCacheHeaderTagger("30s", "1w", ["frontpage"])
+  );
 };
 
 export let meta: MetaFunction = ({ data }) => {
@@ -45,7 +47,7 @@ export let meta: MetaFunction = ({ data }) => {
 };
 
 export function headers() {
-  return HttpCacheHeaderTagger('1m', '1w', ['index']).headers;
+  return HttpCacheHeaderTagger("1m", "1w", ["index"]).headers;
 }
 
 export default function Index() {
@@ -60,7 +62,7 @@ export default function Index() {
           gridRow: `span ${cell.layout.rowspan}`,
         }}
         id="grid-item"
-        key={'cell'+index}
+        key={"cell" + index}
       >
         <GridItem cell={cell} />
       </div>

@@ -9,11 +9,15 @@ import { Product } from "../../components/product";
 import { componentContent } from "../../crystallize/utils/componentContent";
 import { HttpCacheHeaderTagger } from "~/http-cache-header-tagger";
 
-export let loader: LoaderFunction = async ({ params }) => {
+export let loader: LoaderFunction = async ({ params, request }) => {
+  const url = new URL(request.url);
+  // for the preview mode, if the query parameter preview=true is present, ask for the draft version
+  const preview = url.searchParams.get("preview");
+  const version = preview ? "draft" : "published";
   const path = "/shop/" + params.product;
   const data = await catalogueClient.request<ProductQuery>(
     normalizeDocumentNode(ProductDocument),
-    { path }
+    { path, version }
   );
 
   return json(
