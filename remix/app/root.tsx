@@ -41,11 +41,35 @@ export const loader: LoaderFunction = () => {
 export default function App() {
   const data = useLoaderData();
 
+  if (typeof window !== "undefined") {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('/sw.js').then(
+        function (registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        },
+        function (err) {
+          console.log('ServiceWorker registration failed: ', err);
+        }
+      );
+    });
+  }
+
   return (
     <html lang="en" className="bg-primary relative z-10">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="apple-touch-icon" href="/icons/windows11/Square150x150Logo.scale-100.png" />
+        <link rel="icon" type="image/png" href="/icons/windows11/Square150x150Logo.scale-100.png" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-TileImage" content="/icons/windows11/Square150x150Logo.scale-100.png" />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="apple-touch-startup-image" href="/images/icons/windows11/Square150x150Logo.scale-100.png" />
+        <meta name="apple-mobile-web-app-title" content="Dounot" />
+        <link rel="manifest" href="/manifest.json" />
+
         <Meta />
         <Links />
 
