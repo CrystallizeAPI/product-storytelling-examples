@@ -1,4 +1,4 @@
-const MAIN_CACHE = 'debug-dounot-cache-v1';
+const MAIN_CACHE = 'dounot-cache-v1.0.1';
 
 const log = (message) => {
     if (MAIN_CACHE.indexOf('debug') === 0) {
@@ -9,8 +9,8 @@ const log = (message) => {
 self.addEventListener('install', (event) => {
     log('Install');
     event.waitUntil((async () => {
-        // const cache = await caches.open(MAIN_CACHE);
-        // do something on install, like caching resources
+        const cache = await caches.open(MAIN_CACHE);
+        // do something on install, like caching resources you would get from a server
     })());
     self.skipWaiting();
 });
@@ -44,6 +44,7 @@ self.addEventListener('fetch', (event) => {
 
             log('Fetch Normal - ' + event.request.url);
             const cache = await caches.open(MAIN_CACHE);
+            // if you want to returned the cache version, you can do it here. (assuming you have a cache version)
             const cachedResponse = await cache.match(event.request.url);
             if (cachedResponse) {
                 log('Hit: ' + event.request.url);
@@ -54,9 +55,13 @@ self.addEventListener('fetch', (event) => {
                 return freshResponse;
             }
             const responseToCache = freshResponse.clone();
-
             log('Put ' + event.request.url);
-            cache.put(event.request, responseToCache);
+
+            // this is where you can cache the response, we are NOT caching the response here for the boilerplate
+            // but you can cache it if you want to and manage it yourself.
+
+            // cache.put(event.request, responseToCache);
+
             return freshResponse;
 
         } catch (error) {
