@@ -18,6 +18,7 @@ import { BasketButton } from "./components/basket/basket-button";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ErrorComponent } from "./components/404";
 
+
 const queryClient = new QueryClient();
 
 export const meta: MetaFunction = () => {
