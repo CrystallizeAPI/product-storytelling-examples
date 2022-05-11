@@ -1,5 +1,5 @@
-query Product($path: String!) {
-  product: catalogue(path: $path, language: "en") {
+query Product($path: String!, $version: VersionLabel) {
+  product: catalogue(path: $path, language: "en", version:$version ) {
     summary: component(id: "brief") {
       ...component # RichText
     }

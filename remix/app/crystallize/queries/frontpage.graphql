@@ -1,5 +1,5 @@
-query Frontpage($path: String!) {
-  catalogue(path: $path, language: "en") {
+query Frontpage($path: String!, $version: VersionLabel) {
+  catalogue(path: $path, language: "en", version: $version) {
     meta: component(id: "meta") {
       # ContentChunk
       ...component
